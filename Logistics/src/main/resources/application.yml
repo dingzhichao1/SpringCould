@@ -1,0 +1,25 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: logistics
+  zipkin:
+    base-url: http://localhost:8004
+    enabled: true
+    baseUrl: http://localhost:8004
+    #discovery-client-enabled: true
+  sleuth:
+    sampler:
+      probability: 1
+    enabled: true
+eureka:
+  instance:
+    appname: 物流服务
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka
+#feign:
+#  hystrix:
+#    enabled: true

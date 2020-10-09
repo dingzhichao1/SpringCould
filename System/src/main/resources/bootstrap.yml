@@ -1,0 +1,22 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: system
+  cloud:
+    config:
+      profile: dev
+      name: ${spring.application.name}
+      discovery:
+        enabled: true
+        service-id: config
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  instance:
+    appname: 系统服务
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka
